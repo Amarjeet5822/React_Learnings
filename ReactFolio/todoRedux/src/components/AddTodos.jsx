@@ -6,7 +6,7 @@ function AddTodos() {
     const dispatch = useDispatch()
     const addTodoHandler =(e) =>{
         e.preventDefault()
-        dispatch(addTodo(input))
+        dispatch(addTodo(input)) // dispatch = It is a function that sends an action to the Redux store to update the app's state
         setInput("")
     }
 
