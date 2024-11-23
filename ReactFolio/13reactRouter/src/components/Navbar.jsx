@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 const listOfLinks = [
   { 
@@ -24,6 +24,9 @@ const listOfLinks = [
   },
 ]
 function Navbar() {
+  const defaultStyle = { color: "black"}
+  const activeStyle = { color : "red"}
+
   return (
     <>
     {/* < div className = 'flex items-center bg-gray-400 p-2 text-2xl ' >
@@ -44,7 +47,18 @@ function Navbar() {
       }
     </div > */}
     {/* The Extended features of link is NavLink */}
-    m
+    <div className='flex justify-around items-center text-2xl bg-gray-300 m-auto mb-2 py-2 '>
+      {
+        listOfLinks.map(link => (
+          <NavLink 
+            style={({isActive}) => (isActive ? activeStyle: defaultStyle) }
+            key={link.to}
+            to = {link.to} >
+            {link.displayText}
+            </ NavLink>
+        ))
+      }
+    </div>
 
 
 
