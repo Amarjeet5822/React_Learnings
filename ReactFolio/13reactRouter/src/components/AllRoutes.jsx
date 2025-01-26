@@ -14,11 +14,12 @@ function AllRoutes() {
       <Routes>
         {/* Public Route  */}
         <Route path="/login" element={<Login />} />
-        {/* Private Route  */}
-        <Route element={<PrivateRoute/>}>
-          <Route path='/' element={<Home />} />
+        <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
+        {/* Private Route  */}
+        <Route element={<PrivateRoute/>}>
+          
           <Route path='/users' element={<Users />} />
           <Route path='/users/:user_id' element={<SingleUser />} />
         </Route>
